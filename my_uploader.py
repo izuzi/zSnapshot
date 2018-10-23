@@ -33,6 +33,7 @@ class Uploader():
 				
 		return remote_list
 	
+	@my_utils.time_limit(5)	
 	def upload_file(self, local_path, local_name, sub_dir = "", is_file = True):
 	
 		if not local_path or not local_name:

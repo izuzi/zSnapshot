@@ -1,0 +1,7 @@
+[BASE]
+local_file_dir = 
+sina_storage_host = 
+sina_storage_accesskey = 
+sina_storage_secretkey = 
+sina_storage_bucket_name =
+sina_storage_bucket_dir =

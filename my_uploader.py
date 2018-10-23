@@ -4,6 +4,7 @@ import sys
 from urllib.parse import urlparse
 import time
 import datetime
+import my_utils
 
 
 class Uploader():

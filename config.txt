@@ -1,0 +1,7 @@
+[BASE]
+local_file_dir = /opt/lampp/htdocs/zSnapshot/images/
+sina_storage_host = http://sinacloud.net
+sina_storage_accesskey = unpa2hkneP2ZVXJjxBua
+sina_storage_secretkey = b8d54a065cadb6e54e7ea29f49244001c0a360c5
+sina_storage_bucket_name = hizuzi
+sina_storage_bucket_dir = blog

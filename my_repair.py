@@ -45,10 +45,13 @@ def _repair_data(url, html):
 	
 	pattern = re.compile(r'herf="([^http://])(.*?)"|herf=\'([^http://])(.*?)\'')
 	html = re.sub(pattern, 'herf="http://'+path+'/\g<1>\g<2>"', html)
-	
-	pattern = re.compile(r'src="([^http://])(.*?)"|src=\'([^http://])(.*?)\'')
-	html = re.sub(pattern, 'src="http://'+path+'/\g<1>\g<2>"', html)
-	
+
+	try:	
+		pattern = re.compile(r'src="([^http://])(.*?)"|src=\'([^http://])(.*?)\'')
+		html = re.sub(pattern, 'src="http://'+path+'/\g<1>\g<2>"', html)
+	except Exception as e:
+		print("#WARN: _repair_data error, %s, %s", url, str(e))
+
 	return html
 	
 	

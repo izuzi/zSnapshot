@@ -34,5 +34,5 @@ class Spider():
 				response.close()
 				
 			if error:
-				return {"error", str(error)}
-			return {"error", "---"}
+				result["error"] = str(error)
+			return result

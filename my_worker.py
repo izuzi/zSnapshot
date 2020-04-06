@@ -7,7 +7,7 @@ import my_queue
 import time
 import threading
 import sys
-from urllib.parse import urlparse
+import urlparse
 import my_repair
 
 
@@ -40,7 +40,12 @@ class Worker():
 			return False
 			
 		result = self.spider.go(url)
-		if not result or result.get('code') != 200:
+		if not result:
+                        print "#ERROR: result is null, url is %s", url
+                        return False
+		if result.get('code') != 200 or result.get('error', ''):
+			#print "#ERROR: url is %s, code is %d, error is %s" % (url, result.get('code', 0), result.get('error', '')
+			print result.get('code', 0), result.get('error', '')
 			return False
 			
 		print("#INFO: url is ", url)
@@ -80,11 +85,12 @@ class Worker():
 			data = my_queue.get()
 
 			if data == False:
-				print("#INFO: thread %s, queue is empty" % i)
-				sys.stdout.flush()
+				#print("#INFO: thread %s, queue is empty" % i)
+				#sys.stdout.flush()
 				time.sleep(1)
 				continue
-			
+			print("#INFO: data, %s" % data)		
+	
 			self.aciton(data)
 			sys.stdout.flush()
 

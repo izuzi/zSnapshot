@@ -1,0 +1,100 @@
+#fang_div input
+{
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    cursor: auto;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+    height:22px;
+}
+#fang_div_mobile input
+{
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    cursor: auto;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+    height:22px;
+    width: 98%;
+    padding-left:1px;
+}
+#choose_div
+{
+    background-color:#F6F6F6;
+    padding:1px;
+}
+#result_div
+{
+    padding-top:10px;
+    
+}
+.fang_label
+{
+    padding-top:5px;
+}
+.fang_btn{
+    margin: 8px 0px 10px 1px;
+    padding: 6px 8px 6px 8px;
+    background: #88C34B;
+    border: none;
+    font-family: 'Droid Sans', arial, sans-serif;
+    font-size: 12px;
+    color: #fff;
+    cursor: pointer;
+}
+.field_fang_error
+{
+    width:60px;
+    color:#00F;
+    float:left;
+}
+
+#fang_div_mobile .field_fang_type
+{
+    width:80px;
+    color:#000;
+    float:left;
+    font-size: 12px;
+}
+
+.field_fang_type
+{
+    width:150px;
+    color:#000;
+    float:left;
+}
+.fang_item
+{
+    display:block;
+    padding:10px 0px;
+}
+.fang_item_clear{
+    clear:both;
+    margin:3px 0;
+}
+
+#result_count{
+    padding:10px 0px;
+}
+
+#err_1{
+	color:#F00;
+}
+
+#err_2{
+	color:#F00;
+}
+
+#err_3{
+	color:#F00;
+}

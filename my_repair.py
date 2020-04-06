@@ -1,5 +1,5 @@
 import re
-from urllib.parse import urlparse
+import urlparse
 
 
 def repair_data(url, html, remote_list):
@@ -53,7 +53,7 @@ def _repair_data(url, html):
 	
 	
 def get_hostname(url):
-	url_p = urlparse(url)
+	url_p = urlparse.urlparse(url)
 	hostname = url_p.hostname
 	
 	return hostname

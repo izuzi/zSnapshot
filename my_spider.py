@@ -1,5 +1,5 @@
 import json
-import urllib.request
+import urllib2
 import my_utils
 
 
@@ -12,17 +12,17 @@ class Spider():
 	def go(self, url):
 		error = {}
 		result = {}
-		request = urllib.request.Request(url, headers=self.http_header)
+		request = urllib2.Request(url, headers=self.http_header)
 		response = None
 		try:
-			response = urllib.request.urlopen(request, timeout=3)
+			response = urllib2.urlopen(request, timeout=3)
 			
 			result['data'] = response.read()
 			result['code'] = response.getcode()
 			result['info'] = response.info()
 			
 			return result
-		except urllib.request.URLError as e:
+		except Exception as e:
 			if hasattr(e, 'code'):
 				print('Error code:', e.code)
 				error['code'] = e.code

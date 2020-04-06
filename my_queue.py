@@ -1,8 +1,8 @@
-from queue import Queue
+import Queue
 import sys
 
 
-q = Queue(100)
+q = Queue.Queue(100)
 
 def put(data):
 	return q.put(data)

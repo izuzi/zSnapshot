@@ -1,7 +1,7 @@
 from sinastorage.bucket import SCSBucket,ACL
 import sinastorage
 import sys
-from urllib.parse import urlparse
+import urlparse
 import time
 import datetime
 import my_utils
@@ -28,10 +28,12 @@ class Uploader():
 				filename = filename if filename else str(time.time()) + ".html"
 				print("#INFO: uploader ", filename, sub_dir)
 				sys.stdout.flush()
-			
-				remote_link = self.upload_file(filepath, filename, sub_dir, is_file)
-				remote_list[_url] = remote_link
-				
+				try:	
+					remote_link = self.upload_file(filepath, filename, sub_dir, is_file)
+					remote_list[_url] = remote_link
+				except Exception as e:
+					print("#ERR: upload filed failed, %s, %s", filename, str(e))
+					continue
 		return remote_list
 	
 	@my_utils.time_limit(5)	
@@ -65,7 +67,7 @@ class Uploader():
 		self.handler.update_acl(remote_path, acl)
 		
 	def get_subdir(self, url):
-		url_p = urlparse(url)
+		url_p = urlparse.urlparse(url)
 		return url_p.hostname.replace(".", "_")
 		
 		

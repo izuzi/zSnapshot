@@ -43,9 +43,13 @@ class Worker():
 		if not result:
                         print "#ERROR: result is null, url is %s", url
                         return False
+		
+		if not isinstance(result, dict):
+			print "#ERROR: result is not dict, url is ", url, result
+                        return False
+		
 		if result.get('code') != 200 or result.get('error', ''):
-			#print "#ERROR: url is %s, code is %d, error is %s" % (url, result.get('code', 0), result.get('error', '')
-			print result.get('code', 0), result.get('error', '')
+			print url, result.get('code', 0), result.get('error', '')
 			return False
 			
 		print("#INFO: url is ", url)

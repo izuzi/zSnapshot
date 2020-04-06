@@ -35,3 +35,4 @@ class Spider():
 				
 			if error:
 				return {"error", str(error)}
+			return {"error", "---"}
